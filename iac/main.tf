@@ -43,7 +43,8 @@ resource "aws_instance" "web-server" {
 
  provisioner "remote-exec" {
  inline = [
- "sudo apt-get update",
+"sudo add-apt-repository -y -s "deb http://archive.ubuntu.com/ubuntu/ jammy main universe"",
+"sudo apt-get update",
  "sudo apt-get update",
  "sudo apt install -y tomcat9",
  "sudo chmod -R 777 /var/lib/tomcat9/webapps/",
