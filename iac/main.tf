@@ -16,7 +16,7 @@ terraform {
     
   }
 }
-resource "tlsneelabh_private_key" "rsa" {
+resource "tls_private_key" "rsa" {
 algorithm = "RSA"
 rsa_bits = 4096
 }
