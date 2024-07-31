@@ -9,9 +9,6 @@ provider "aws" {
 
 
 
-
-
-
 variable "keyname" {
 
 
