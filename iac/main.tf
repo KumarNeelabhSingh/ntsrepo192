@@ -3,7 +3,7 @@ region = "us-east-1"
 }
 
 
-variable "keynameneelabh" {
+variable "keyname" {
  type = string
 }
 
@@ -12,7 +12,7 @@ terraform {
       region = "us-east-1"
      bucket = "nts18s3tf"
      dynamodb_table = "tfnts18"
-     key = "test12889911.tfstate"
+     key = "test19992889911.tfstate"
     
   }
 }
@@ -23,7 +23,7 @@ rsa_bits = 4096
 
 
 resource "aws_key_pair" "tf-key-pair" {
-key_name = var.keynameneelabh
+key_name = var.keyname
 public_key = tls_private_key.rsa.public_key_openssh
 }
 
@@ -37,7 +37,7 @@ filename = var.keynameneelabh
 resource "aws_instance" "web-server" {
  ami      = "ami-04a81a99f5ec58529"
  instance_type = "t2.micro"
- key_name   = var.keynameneelabh
+ key_name   = var.keyname
 
 
 
