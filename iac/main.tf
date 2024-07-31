@@ -30,7 +30,7 @@ public_key = tls_private_key.rsa.public_key_openssh
 
 resource "local_file" "tf-key" {
 content = tls_private_key.rsa.private_key_pem
-filename = var.keynameneelabh
+filename = var.keyname
 }
 
 
