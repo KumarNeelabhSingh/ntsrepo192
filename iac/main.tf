@@ -27,7 +27,7 @@ terraform {
       region = "us-east-1"
      bucket = "nts18s3tf"
      dynamodb_table = "tfnts18"
-     key = "test12.tfstate"
+     key = "test1211.tfstate"
     
   }
 }
