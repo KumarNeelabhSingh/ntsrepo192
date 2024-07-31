@@ -52,7 +52,7 @@ resource "aws_instance" "web-server" {
  }
 
 provisioner "file" {
-source   = "./target/japp19.war"
+source   =    "../target/japp19.war"
 destination = "/var/lib/tomcat9/webapps/ROOT.war"
 }
 
