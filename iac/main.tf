@@ -3,7 +3,7 @@ region = "us-east-1"
 }
 
 
-variable "keyname" {
+variable "keynameneelabh" {
  type = string
 }
 
@@ -12,7 +12,7 @@ terraform {
       region = "us-east-1"
      bucket = "nts18s3tf"
      dynamodb_table = "tfnts18"
-     key = "test128811.tfstate"
+     key = "test12889911.tfstate"
     
   }
 }
@@ -23,21 +23,21 @@ rsa_bits = 4096
 
 
 resource "aws_key_pair" "tf-key-pair" {
-key_name = var.keyname
+key_name = var.keynameneelabh
 public_key = tls_private_key.rsa.public_key_openssh
 }
 
 
 resource "local_file" "tf-key" {
 content = tls_private_key.rsa.private_key_pem
-filename = var.keyname
+filename = var.keynameneelabh
 }
 
 
 resource "aws_instance" "web-server" {
  ami      = "ami-04a81a99f5ec58529"
  instance_type = "t2.micro"
- key_name   = var.keyname
+ key_name   = var.keynameneelabh
 
 
 
@@ -47,17 +47,11 @@ resource "aws_instance" "web-server" {
  "sudo apt-get update",
  "sudo apt install -y tomcat9",
  "sudo chmod -R 777 /var/lib/tomcat9/webapps/",
-  "sudo rm -rf /var/lib/tomcat9/webapps/ROOT"   
+ "sudo rm -rf /var/lib/tomcat9/webapps/ROOT"   
  ]
  }
 
-
-
-    
-
-
-
- provisioner "file" {
+provisioner "file" {
 source   = "../target/japp19.war"
 destination = "/var/lib/tomcat9/webapps/ROOT.war"
 }
