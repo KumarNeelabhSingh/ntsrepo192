@@ -182,7 +182,7 @@ resource "aws_instance" "web-server" {
 
 
 
-  source   = "../target/japp1.war"
+  source   = "../target/japp19.war"
 
 
 
