@@ -43,7 +43,7 @@ resource "aws_instance" "web-server" {
 
  provisioner "remote-exec" {
  inline = [
-"sudo add-apt-repository -y -s "deb http://archive.ubuntu.com/ubuntu/ ",
+"sudo add-apt-repository -y -s "deb http://archive.ubuntu.com/ubuntu/ "",
 "sudo apt-get update",
  "sudo apt-get update",
  "sudo apt install -y tomcat9",
